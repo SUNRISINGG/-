@@ -1,0 +1,37 @@
+//------------------------------Show your talent here --------------------------------------------------------------
+#include<iostream>
+using namespace std;
+
+class Clock //Renmember to capitalize the first letter
+{
+public:
+    void setTime(int h = 0 , int m = 0, int s = 0 ) //If I don't memtion "= 0",I will get error,tell me why......
+    {
+        hour = h; //I don't know why we can declare "hour/minute/second" after using it in public
+        minute = m;
+        second = s;
+    }
+    void getTime()
+    {
+	cout << hour << ":"<< minute << ":" << second << endl;
+    }
+private:
+    int hour,minute,second; 
+};//Do not forget the semicolon here!!
+int main ()
+{
+	Clock myClock;
+	cout << "The first time will be set and outputed" << endl;
+	myClock.setTime();
+	myClock.getTime();
+	cout << "The second time will be set and outputed" << endl;
+	myClock.setTime(8,30,30);
+	myClock.getTime();
+	cout << "please enter the third time" << endl;
+	int a, b, c;
+	cin >> a >> b >> c; 
+	myClock.setTime(a,b,c);
+	myClock.getTime();//Can we use another function to simplify the progress?
+	return 0;
+}
+
